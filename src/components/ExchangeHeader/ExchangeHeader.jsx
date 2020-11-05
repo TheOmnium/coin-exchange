@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import styled from 'styled-components';
 
 const Img = styled.img`
-height: 30vmin;
+height: 20vmin;
 pointer-events: none;
 `;
 
@@ -18,7 +18,7 @@ color: white;
 `;
 
 const H1 = styled.h1`
-font-size: 4rem;
+font-size: 2rem;
 `;
 
 export default class ExchangeHeader extends Component {
