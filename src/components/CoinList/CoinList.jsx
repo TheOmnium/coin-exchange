@@ -1,41 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Coin from '../Coin/Coin';
 import styled from 'styled-components';
 
 const Table = styled.table`
-    margin: 20px auto 230px auto;
-    display: inline-block;
-    font-size: 1.0rem;
+  margin: 10px auto 160px auto;
+  display: inline-blofont-size: 2.0rem;
   
 `;
 
-export default class CoinList extends Component {
-    render() {
-        return (
-            <Table>
-        <thead>
-            <tr>
-              <th>Name</th>
-              <th>Ticker</th>
-              <th>Price</th>
-              {this.props.showBalance ? <th>Balance</th> : null }
-              <th>Actions</th>
-            </tr>
-          </thead>
-      <tbody>
+export default function CoinList(props) {
+    return (
+      <Table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Ticker</th>
+                <th>Price</th>
+                {props.showBalance ? <th>Balance</th> : null }
+                <th>Actions</th>
+              </tr>
+            </thead>
+          <tbody>
         {
-          this.props.coinData.map( ({name, ticker, price, balance}) => 
-          <Coin key={ticker} 
-          handleRefresh={this.props.handleRefresh} 
-          name={name} 
-          ticker={ticker} 
-          showBalance={this.props.showBalance}
-          balance={balance}
-          price={price} /> 
+            props.coinData.map( ({key, name, ticker, price, balance}) => 
+                <Coin key={key} 
+                handleRefresh={props.handleRefresh} 
+                name={name} 
+                ticker={ticker} 
+                showBalance={props.showBalance}
+                balance={balance}
+                price={price} 
+                tickerId={key} /> 
           )
         }
           </tbody> 
-        </Table>
-        )
-    }
+    </Table>
+  )
 }

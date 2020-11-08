@@ -3,17 +3,19 @@ import logo from './logo.svg';
 import styled from 'styled-components';
 
 const Img = styled.img`
-height: 20vmin;
+height: 12vmin;
 pointer-events: none;
+
+
 `;
 
 const Header = styled.header`
-background-color: #282c34;
+background-color: black;
 min-height: 20vh;
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: center;
+justify-content: 10px;
 color: white;
 `;
 
@@ -27,7 +29,7 @@ export default class ExchangeHeader extends Component {
             <Header>
                 <Img src={logo} alt="React logo"/>
                 <H1>
-                    Coin Exchange
+                    Crypto portfolio                                                                
                 </H1>
             </Header>
         )
